@@ -1,0 +1,33 @@
+{
+  "name": "guess-melody",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Учебный проект «Угадай мелодию» от HTML Academy",
+  "scripts": {
+    "eslint": "eslint src/**/*.js",
+    "test": "npm run eslint",
+    "build": "webpack"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.8.4",
+    "@babel/core": "^7.8.6",
+    "@babel/node": "^7.8.4",
+    "@babel/preset-env": "^7.8.6",
+    "eslint": "5.13.0",
+    "eslint-config-htmlacademy": "0.5.2",
+    "gulp": "^4.0.2",
+    "gulp-better-rollup": "4.0.1",
+    "gulp-sourcemaps": "2.6.5",
+    "install": "^0.13.0",
+    "webpack": "^4.42.0",
+    "webpack-cli": "^3.3.11"
+  },
+  "engines": {
+    "node": "10"
+  },
+  "main": "gulpfile.js",
+  "dependencies": {},
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}

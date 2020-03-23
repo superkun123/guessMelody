@@ -115,5 +115,5 @@ const moduleGenre = () => {
 
 
 export {moduleGenre};
-
+console.log(1);
 

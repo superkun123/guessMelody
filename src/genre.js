@@ -2,6 +2,7 @@ import {moduleArtists} from './game-artist.js';
 import {moduleWelcome} from './welcome.js';
 
 const mainScreen = document.querySelector(`#root`);
+let total;
 const moduleGenre = () => {
   mainScreen.innerHTML = `section class="game game--genre">
   <header class="game__header">
@@ -81,10 +82,9 @@ const moduleGenre = () => {
 </section>`;
   const toMainScreen = document.querySelector(`.game__back`);
   const answerBtn = document.querySelector(`.game__submit`);
-  const choiceAnswer = document.querySelectorAll(`.game__input`);
-  let answerValue = [];
-
   const resultModule = () => {
+    const choiceAnswer = document.querySelectorAll(`.game__input`);
+    let answerValue = [];
     answerBtn.setAttribute(`disabled`, `disabled`);
     for (let i = 0; i < choiceAnswer.length; i++) {
       choiceAnswer[2].classList.add(`true__answer`);
@@ -96,24 +96,38 @@ const moduleGenre = () => {
           } else if (event.target.checked) {
             answerValue.push(-2);
           } else {
-            answerValue.push(`ytn`);
+            answerValue.push(`Ошибка`);
           }
           console.log(answerValue);
           moduleArtists();
-          return answerValue;
         });
       });
     }
+    return answerValue;
   };
 
-  resultModule();
+  total = resultModule();
+
   toMainScreen.addEventListener(`click`, () => {
     moduleWelcome();
   });
 
+
+  answerBtn.addEventListener(`click`, () => {
+    moduleArtists();
+  });
+
 };
+
+// Этот модуль верно передаёт функцию
 
 
 export {moduleGenre};
-console.log(1);
+export {total};
 
+
+
+
+// summ = answerValue.reduce(function (previousValue, value) {
+//   return previousValue + value;
+// });

@@ -3,6 +3,8 @@ import {moduleWelcome} from './welcome.js';
 
 const mainScreen = document.querySelector(`#root`);
 let total;
+
+
 const moduleGenre = () => {
   mainScreen.innerHTML = `section class="game game--genre">
   <header class="game__header">
@@ -80,6 +82,7 @@ const moduleGenre = () => {
     </form>
   </section>
 </section>`;
+
   const toMainScreen = document.querySelector(`.game__back`);
   const answerBtn = document.querySelector(`.game__submit`);
   const resultModule = () => {
@@ -98,7 +101,6 @@ const moduleGenre = () => {
           } else {
             answerValue.push(`Ошибка`);
           }
-          console.log(answerValue);
           moduleArtists();
         });
       });
@@ -119,15 +121,7 @@ const moduleGenre = () => {
 
 };
 
-// Этот модуль верно передаёт функцию
-
 
 export {moduleGenre};
 export {total};
 
-
-
-
-// summ = answerValue.reduce(function (previousValue, value) {
-//   return previousValue + value;
-// });

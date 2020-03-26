@@ -71,6 +71,8 @@ const moduleArtists = () => {
       moduleWin();
     });
   }
+
+
   const toMainScreen = document.querySelector(`.game__back`);
   toMainScreen.addEventListener(`click`, () => {
     moduleWelcome();

@@ -1,8 +1,9 @@
-import {moduleWin} from './result-success.js';
-import {moduleWelcome} from './welcome.js';
-const mainScreen = document.querySelector(`#root`);
-const moduleArtists = () => {
-  mainScreen.innerHTML = `<section class="game game--artist">
+import {elementWin} from './result-success.js';
+import {render, changeScreen, random} from './util.js';
+import {question} from './data';
+// import {element} from './welcome.js';
+
+const moduleArtists = `<section class="game game--artist">
   <header class="game__header">
     <a class="game__back" href="#">
       <span class="visually-hidden">Сыграть ещё раз</span>
@@ -42,7 +43,7 @@ const moduleArtists = () => {
         <input class="artist__input visually-hidden" type="radio" name="answer" value="artist-1" id="answer-1">
         <label class="artist__name" for="answer-1">
           <img class="artist__picture" src="http://placehold.it/134x134" alt="Пелагея">
-          Пелагея
+          ${question.questionArtists[random(0, 5)]}
         </label>
       </div>
 
@@ -50,7 +51,7 @@ const moduleArtists = () => {
         <input class="artist__input visually-hidden" type="radio" name="answer" value="artist-2" id="answer-2">
         <label class="artist__name" for="answer-2">
           <img class="artist__picture" src="http://placehold.it/134x134" alt="Пелагея">
-          Краснознаменная дивизия имени моей бабушки
+          ${question.questionArtists[random(0, 5)]}
         </label>
       </div>
 
@@ -58,24 +59,28 @@ const moduleArtists = () => {
         <input class="artist__input visually-hidden" type="radio" name="answer" value="artist-3" id="answer-3">
         <label class="artist__name" for="answer-3">
           <img class="artist__picture" src="http://placehold.it/134x134" alt="Пелагея">
-          Lorde
+          ${question.questionArtists[random(0, 5)]}
         </label>
       </div>
     </form>
   </section>
 </section>`;
 
-  const answerArtists = document.querySelectorAll(`.artist__picture`);
-  for (let i = 0; i < answerArtists.length; i++) {
-    answerArtists[i].addEventListener(`click`, () => {
-      moduleWin();
-    });
-  }
-  const toMainScreen = document.querySelector(`.game__back`);
-  toMainScreen.addEventListener(`click`, () => {
-    moduleWelcome();
+const elementArtist = render(moduleArtists);
+
+const answerArtists = elementArtist.querySelectorAll(`.artist__picture`);
+
+answerArtists.forEach((index) => {
+  index.addEventListener(`click`, () => {
+    changeScreen(elementWin);
   });
+});
 
-};
 
-export {moduleArtists};
+// const toMainScreen = elementArtist.querySelector(`.game__back`);
+// toMainScreen.addEventListener(`click`, () => {
+//   changeScreen(element);
+// });
+
+export {elementArtist};
+

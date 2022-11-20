@@ -1,7 +1,6 @@
 import {elementWin} from './result-success.js';
 import {render, changeScreen, random} from './util.js';
 import {question} from './data';
-// import {element} from './welcome.js';
 
 const moduleArtists = `<section class="game game--artist">
   <header class="game__header">
@@ -76,11 +75,6 @@ answerArtists.forEach((index) => {
   });
 });
 
-
-// const toMainScreen = elementArtist.querySelector(`.game__back`);
-// toMainScreen.addEventListener(`click`, () => {
-//   changeScreen(element);
-// });
 
 export {elementArtist};
 

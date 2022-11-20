@@ -1,6 +1,4 @@
 import {render, changeScreen, random} from './util.js';
-// import { answerArtists } from './game-artist.js';
-// import {element} from './welcome.js';
 import {elementArtist} from './game-artist';
 import {dataMusic} from './data-music';
 import {question} from './data';
@@ -101,7 +99,6 @@ const elementHeaderGenre = render(genreHeader);
 const firstPlay = elementGenre.querySelector(`.audio`);
 let playBtn = elementGenre.querySelector(`.track_btn_first`);
 const answerBtn = elementGenre.querySelector(`.game__submit`);
-// const toMainScreen = elementGenre.querySelector(`.game__back`);
 answerBtn.setAttribute(`disabled`, `disabled`);
 
 playBtn.addEventListener(`click`, (event) => {

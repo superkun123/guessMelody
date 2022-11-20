@@ -111,8 +111,6 @@ const moduleGenre = () => {
   };
 
   resultModule();
-
-  // console.log(resultModule());
   toMainScreen.addEventListener(`click`, () => {
     moduleWelcome();
   });
